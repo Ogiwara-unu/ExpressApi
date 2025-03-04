@@ -1,6 +1,7 @@
 const express = require('express');
 const sequelize = require('./config/database');
 const clientesRoutes = require('./Routes/clientesRoutes'); 
+const eventosRoutes = require('./Routes/eventosRoutes');
 
 const app = express();
 
@@ -9,6 +10,7 @@ app.use(express.json());
 
 
 app.use('/api', clientesRoutes);
+app.use('/api', eventosRoutes);
 
 // DEPURACION :V
 sequelize.authenticate()
